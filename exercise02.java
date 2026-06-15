@@ -1,19 +1,18 @@
-import java.util.Scanner;
-
 public class exercise02 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // 入力機
-        System.out.print("Nhập kích thước mảng :");
-        int SIZE = sc.nextInt(); // ユーザが入力したキーボードを記憶する
-        int[] arr = new int[SIZE]; // 価値を受け取るカゴ
-        for(int i = 0; i < SIZE; i++) {
-            System.out.print("Giá trị phần tử thứ " + (i +1) + ":");
-            arr[i] = sc.nextInt(); // 価値を受け取るカゴ
+        StringBuilder sb = new StringBuilder("Hello, Java World!");
+        System.out.println("Chuỗi ban đầu: " + sb.toString());
+
+        // 2. Xóa các ký tự từ vị trí 5 đến 9
+        sb.delete(5, 10); // Xóa ", Jav"
+        System.out.println("Chuỗi sau khi xóa: " + sb.toString());
+
+        // 3. Thay thế đoạn "World" bằng "Universe"
+        // Tìm vị trí của "World" và thay thế
+        int start = sb.indexOf("World");
+        if (start != -1) {
+            sb.replace(start, start + 5, "Universe");
         }
-        int sum =0;
-        for(int value : arr){
-            sum += value; // Cộng dồn
-        }
-        System.out.println("Tổng là :" + sum);
+        System.out.println("Chuỗi sau khi thay thế: " + sb.toString());
     }
 }
